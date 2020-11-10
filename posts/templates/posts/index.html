@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>posts</title>
+        <link rel="stylesheet" href="{% static 'posts/style.css' %}" type="text/css"/>
+    </head>
+    <body>
+        <main>
+        <box>
+            <img id="profile" src="{% static 'posts/images/nature.jpg' %}"></img>
+        </box>    
+        <box>
+        <h1>My Posts</h1>
+        </box>
+
+        {% if posts %}
+        <table>
+            <thead>
+                <tr>
+                <th>#</th>
+                <th>작성자</th>
+                <th>본문</th>
+                <th>게시물</th>
+                <th>상세</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for post in posts %}
+            <tr>    
+                <th>{{post.id}}</th>
+                <td>{{post.author}}</td>
+                <td>{{post.body}}</td>
+                <td>{{post.created_at}}</td>
+                <td><a href="{% url 'posts:detail' post.id %}">보기</a></td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p>No Posts!</p>
+        {% endif %}
+        </box>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>resume</title>
+        <link rel="stylesheet" href="{% static 'resume/style.css' %}" type="text/css"/>
+    </head>
+    <body>
+        <h1 class='box'>My Name is YEIN LEE</h1>
+        <img class='box' id="profile" src="{% static 'resume/images/profile.jpg' %}"></img>
+        <div class='box'>
+            <h2 class="bold">About Me</h2>
+        </div>
+        <div class='box'>
+            <ul>
+                <li> <b>Email:</b> yeinlee@ucla.edu </li>
+                <li> <b>Phone:</b> 010-1234-5678</li>
+                <li> <b>Linkedin:</b> </li>
+            </ul>
+        </div>
+        <div class='box'>
+            <h2 class="bold">Fun Facts</h2>
+        </div>
+        <div class='box'>
+            <ul>
+                <li> I have a dog named "Kkami"</li>
+                <li> My favorite city is <a href="https://en.wikipedia.org/wiki/Los_Angeles">Los Angeles</a></li>
+            </ul>
+        </div>
+    </body>
+</html>
